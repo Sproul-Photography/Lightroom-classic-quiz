@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lightroom Classic Assessment — Sproul Photography</title>
+
+<!-- ============================================================
+     SEO & SOCIAL PREVIEW
+     Replace REPLACE_WITH_YOUR_URL with the live address of this
+     page once hosted, and og-image.jpg with a 1200x630 image
+     uploaded alongside these files.
+     ============================================================ -->
+<meta name="description" content="Test your Adobe Lightroom Classic knowledge with 30 questions drawn from a bank of 220, covering import, masking, global adjustments, exporting, the Library module and presets. Score 75% or higher to earn a downloadable certificate.">
+<meta name="author" content="Martin Sproul">
+<!-- noindex: this hosted copy must NOT compete with your Wix page in search.
+     The link still works, and social previews below still render normally. -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="REPLACE_WITH_YOUR_WIX_PAGE_URL">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sproul Photography">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Lightroom Classic Assessment — How Well Do You Really Know It?">
+<meta property="og:description" content="30 questions drawn from a bank of 220. Score 75% or higher and download your certificate.">
+<meta property="og:url" content="REPLACE_WITH_YOUR_URL">
+<meta property="og:image" content="REPLACE_WITH_YOUR_URL/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lightroom Classic Assessment by Martin Sproul, Sproul Photography">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lightroom Classic Assessment — How Well Do You Really Know It?">
+<meta name="twitter:description" content="30 questions drawn from a bank of 220. Score 75% or higher and download your certificate.">
+<meta name="twitter:image" content="REPLACE_WITH_YOUR_URL/og-image.jpg">
+
+<meta name="theme-color" content="#16324f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="certificate.js" defer></script>
+
+<style>
+:root {
+  --bg: #f6f4ef;            /* warm paper */
+  --card: #ffffff;
+  --option: #faf9f6;
+  --option-h: #f3f1ea;
+  --navy: #16324f;          /* matches certificate */
+  --navy-h: #0f2439;
+  --gold: #b98a2e;
+  --gold-soft: rgba(185, 138, 46, 0.12);
+  --green: #0f9d6b;
+  --green-hover: #0c7f56;
+  --green-bg: #ecfdf5;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --text: #1e2732;
+  --muted: #6b7280;
+  --border: #e6e2d8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.brand { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; text-align: center; }
+h1 { font-family: 'Fraunces', Georgia, serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; color: var(--navy); margin-bottom: 8px; text-align: center; }
+.subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 28px; text-align: center; max-width: 480px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px;
+  width: 100%;
+  max-width: 720px;
+  box-shadow: 0 8px 24px -8px rgba(22, 50, 79, 0.10), 0 2px 6px -2px rgba(22, 50, 79, 0.06);
+}
+@media (max-width: 520px) {
+  body { padding: 20px 10px; }
+  .card { padding: 22px 18px; border-radius: 14px; }
+  h1 { font-size: 1.55rem; }
+}
+
+.fade-in-up { animation: fadeSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-bar { background: var(--bg); border-radius: 99px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { background: linear-gradient(90deg, var(--navy), var(--gold)); height: 100%; border-radius: 99px; transition: width 0.4s ease; }
+.meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--muted); margin-bottom: 12px; font-weight: 500; flex-wrap: wrap; }
+.category { background: var(--gold-soft); color: #96701f; font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.06em; }
+.question { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-weight: 600; line-height: 1.5; margin: 16px 0 24px; color: var(--navy); }
+
+.options { display: flex; flex-direction: column; gap: 12px; }
+.option {
+  background: var(--option);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 15px 18px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.18s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  outline: none;
+  line-height: 1.45;
+}
+.option:hover:not(.locked) { background: var(--option-h); border-color: var(--gold); transform: translateY(-1px); }
+.option:focus-visible:not(.locked) { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(22, 50, 79, 0.18); }
+.option-letter { font-weight: 700; color: var(--muted); min-width: 26px; background: #ffffff; border: 1px solid var(--border); border-radius: 7px; padding: 4px 0; text-align: center; font-size: 0.85rem; flex-shrink: 0; }
+
+.option.correct { background: var(--green-bg); border-color: var(--green); color: #065f46; }
+.option.correct .option-letter { background: var(--green); color: white; border-color: var(--green); }
+.option.wrong { background: var(--red-bg); border-color: var(--red); color: #991b1b; }
+.option.wrong .option-letter { background: var(--red); color: white; border-color: var(--red); }
+.option.locked { cursor: default; }
+.option.locked:not(.correct):not(.wrong) { opacity: 0.5; }
+
+.feedback { margin-top: 20px; padding: 16px 20px; border-radius: 12px; font-size: 0.95rem; font-weight: 500; line-height: 1.5; display: none; animation: fadeSlideUp 0.3s ease; }
+.feedback.correct { background: var(--green-bg); border: 1px solid #a7f3d0; color: #065f46; }
+.feedback.wrong { background: var(--red-bg); border: 1px solid #fecaca; color: #991b1b; }
+
+.btn { margin-top: 24px; width: 100%; padding: 16px; background: var(--navy); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: background 0.2s ease, transform 0.1s ease; outline: none; display: flex; justify-content: center; align-items: center; gap: 8px; }
+.btn:hover, .btn:focus-visible { background: var(--navy-h); }
+.btn:active { transform: scale(0.99); }
+.btn-success { background: var(--green); }
+.btn-success:hover, .btn-success:focus-visible { background: var(--green-hover); }
+
+/* Start Screen */
+.start { text-align: center; padding: 8px 0; }
+.start-icon { font-size: 3rem; margin-bottom: 16px; display: inline-block; padding: 18px; background: var(--gold-soft); border-radius: 50%; }
+.start h2 { font-family: 'Fraunces', Georgia, serif; color: var(--navy); }
+.start p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 28px; }
+.config-group { text-align: left; margin-bottom: 18px; }
+.config-label { font-size: 0.78rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; display: block; }
+.input-field { width: 100%; padding: 14px 16px; background: var(--card); border: 2px solid var(--border); color: var(--text); border-radius: 12px; font-size: 1rem; font-family: inherit; font-weight: 500; outline: none; transition: border-color 0.2s; }
+.input-field:focus { border-color: var(--gold); }
+.consent-row { display: flex; align-items: flex-start; gap: 10px; text-align: left; margin: 4px 0 8px; }
+.consent-row input { margin-top: 3px; accent-color: var(--navy); width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+.consent-row label { font-size: 0.85rem; color: var(--muted); line-height: 1.5; cursor: pointer; }
+.error-msg { color: var(--red); font-size: 0.85rem; font-weight: 500; display: none; margin-top: 10px; }
+.privacy-note { font-size: 0.75rem; color: var(--muted); margin-top: 14px; }
+
+/* Results */
+.results { text-align: center; padding: 8px 0; }
+.score-ring { width: 160px; height: 160px; border-radius: 50%; background: conic-gradient(var(--gold) 0%, var(--gold) var(--pct), var(--bg) var(--pct)); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+.score-ring.pass { background: conic-gradient(var(--green) 0%, var(--green) var(--pct), var(--bg) var(--pct)); }
+.score-inner { width: 136px; height: 136px; border-radius: 50%; background: var(--card); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
+.score-num { font-family: 'Fraunces', Georgia, serif; font-size: 2.8rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 4px; }
+.score-denom { font-size: 0.9rem; font-weight: 500; color: var(--muted); }
+.grade { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+.grade-msg { color: var(--muted); font-size: 0.95rem; margin-bottom: 28px; font-weight: 500; }
+
+.cert-banner { background: var(--green-bg); border: 1px solid #a7f3d0; border-radius: 12px; padding: 24px; margin-bottom: 28px; text-align: center; }
+.cert-banner h3 { font-family: 'Fraunces', Georgia, serif; color: #065f46; margin-bottom: 8px; font-size: 1.25rem; }
+.cert-banner p { color: #047857; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5; }
+.fail-banner { background: var(--red-bg); border: 1px solid #fecaca; border-radius: 12px; padding: 20px; margin-bottom: 28px; text-align: center; color: #991b1b; font-size: 0.95rem; font-weight: 500; line-height: 1.5; }
+
+.cat-breakdown { background: var(--option); border-radius: 16px; padding: 24px; margin-bottom: 28px; text-align: left; border: 1px solid var(--border); }
+.cb-item { margin-bottom: 16px; }
+.cb-item:last-child { margin-bottom: 0; }
+.cb-header { display: flex; justify-content: space-between; gap: 8px; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+.cb-bar-bg { width: 100%; height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.cb-bar-fill { height: 100%; background: var(--navy); border-radius: 99px; transition: width 1s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.review-list { text-align: left; margin-bottom: 28px; display: flex; flex-direction: column; gap: 12px; }
+details.review-item { background: #ffffff; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+details.review-item[open] { border-color: #fca5a5; }
+summary { padding: 16px; cursor: pointer; font-size: 0.92rem; font-weight: 600; color: var(--text); outline: none; list-style: none; display: flex; gap: 12px; align-items: flex-start; transition: background 0.2s; line-height: 1.45; }
+summary::-webkit-details-marker { display: none; }
+summary:hover { background: var(--bg); }
+.ri-icon { flex-shrink: 0; }
+.details-content { padding: 0 16px 20px 44px; font-size: 0.9rem; line-height: 1.6; }
+.ri-wrong { color: #b91c1c; font-weight: 500; margin-bottom: 6px; padding: 8px 12px; background: var(--red-bg); border-radius: 8px; }
+.ri-a { color: #047857; font-weight: 500; padding: 8px 12px; background: var(--green-bg); border-radius: 8px; }
+</style>
+</head>
+<body>
+
+<div class="brand">Sproul Photography</div>
+<h1>Lightroom Classic Assessment</h1>
+<p class="subtitle">Test your mastery of photo cataloguing and editing workflows — earn your certificate.</p>
+<div class="card" id="app"></div>
+
+<!--
+  ==============================================================
+  QUESTION BANK (CSV)
+  Column 5 is ALWAYS the correct answer; options are shuffled
+  at runtime. Never use "All of the above" / "Both a and b"
+  style answers — they break under shuffling.
+  ==============================================================
+-->
+<!-- Question bank now lives in questions.csv, loaded at runtime. -->
+<!-- ============================================================== -->
+
+<script>
+// --- CSV PARSER ---
+function parseCSVToQuiz(csvText) {
+    const rows = [];
+    let row = [];
+    let currentVal = '';
+    let insideQuotes = false;
+
+    for (let i = 0; i < csvText.length; i++) {
+        const char = csvText[i];
+        const nextChar = csvText[i + 1];
+
+        if (char === '"') {
+            if (insideQuotes && nextChar === '"') {
+                currentVal += '"';
+                i++;
+            } else {
+                insideQuotes = !insideQuotes;
+            }
+        } else if (char === ',' && !insideQuotes) {
+            row.push(currentVal);
+            currentVal = '';
+        } else if ((char === '\n' || char === '\r') && !insideQuotes) {
+            if (char === '\r' && nextChar === '\n') i++;
+            row.push(currentVal);
+            rows.push(row);
+            row = [];
+            currentVal = '';
+        } else {
+            currentVal += char;
+        }
+    }
+    if (currentVal !== '' || row.length > 0) {
+        row.push(currentVal);
+        rows.push(row);
+    }
+
+    const qbArray = [];
+    for (let i = 1; i < rows.length; i++) {
+        const r = rows[i];
+        if (r.length < 5) continue;
+        const cat = r[0] ? r[0].trim() : "General";
+        const question = r[3] ? r[3].trim() : "";
+        const correct = r[4] ? r[4].trim() : "";
+        if (!question || !correct) continue;
+
+        const options = [correct];
+        if (r[5] && r[5].trim()) options.push(r[5].trim());
+        if (r[6] && r[6].trim()) options.push(r[6].trim());
+        if (r[7] && r[7].trim()) options.push(r[7].trim());
+
+        qbArray.push({ q: question, o: options, c: 0, cat: cat });
+    }
+    return qbArray;
+}
+
+// --- QUESTION BANK LOADER ---
+// The bank lives in questions.csv alongside this file. Edit that file to add,
+// remove or reword questions. No need to touch this HTML.
+const QUESTION_BANK_URL = 'questions.csv';
+let QB = [];
+
+let selected = [], current = 0, score = 0, answers = [];
+let quizLength = 30;
+let candidateFirstName = "";
+let candidateLastName = "";
+let candidateEmail = "";
+let candidateConsent = false;
+let lastPct = 0;
+const PASS_MARK = 75;
+
+// --- WIX BRIDGE HELPERS ---
+function postToWix(type, payload) {
+  try {
+    window.parent.postMessage({ type: type, payload: payload }, "*");
+  } catch (e) { /* standalone use — ignore */ }
+}
+function reportHeight() {
+  postToWix("QUIZ_HEIGHT", { height: document.body.scrollHeight + 40 });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (!selected.length || current >= selected.length) return;
+  const isLocked = document.querySelector('.option.locked') !== null;
+  const key = e.key.toLowerCase();
+
+  if (!isLocked) {
+    if (key === '1' || key === 'a') triggerOption(0);
+    if (key === '2' || key === 'b') triggerOption(1);
+    if (key === '3' || key === 'c') triggerOption(2);
+    if (key === '4' || key === 'd') triggerOption(3);
+  }
+
+  if (e.key === 'Enter' && isLocked) {
+    const nxtBtn = document.getElementById('nxt');
+    if (nxtBtn && nxtBtn.style.display !== 'none') next();
+  }
+});
+
+function triggerOption(idx) {
+  const opts = document.querySelectorAll('.option');
+  if (opts[idx]) pick(opts[idx], idx);
+}
+
+function shuffle(a) {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+}
+
+function gradeLabel(pct) {
+  if (pct >= 90) return ["Pass – Exceptional", "var(--green)"];
+  if (pct >= PASS_MARK) return ["Pass – Proficient", "var(--green)"];
+  if (pct >= 60) return ["Not Passed – Nearly There", "#d97706"];
+  return ["Not Passed – Keep Practising", "var(--red)"];
+}
+
+function showStart() {
+  const app = document.getElementById('app');
+  app.innerHTML = `
+    <div class="start fade-in-up">
+      <div class="start-icon">📷</div>
+      <h2 style="margin-bottom:12px; font-size:1.5rem;">Ready to test yourself?</h2>
+      <p>30 questions drawn from a bank of ${QB.length}, covering importing, masking, global adjustments, keyboard shortcuts, exporting, the Library module, troubleshooting, and presets &amp; profiles.<br><br>Score <strong>${PASS_MARK}% or higher</strong> to earn your downloadable certificate.</p>
+
+      <div class="config-group">
+        <label class="config-label" for="userFirstName">First Name</label>
+        <input type="text" id="userFirstName" class="input-field" placeholder="e.g. Jane" autocomplete="given-name" onkeydown="if(event.key==='Enter')startQuiz()">
+      </div>
+
+      <div class="config-group">
+        <label class="config-label" for="userLastName">Last Name</label>
+        <input type="text" id="userLastName" class="input-field" placeholder="e.g. Doe" autocomplete="family-name" onkeydown="if(event.key==='Enter')startQuiz()">
+      </div>
+
+      <div class="config-group">
+        <label class="config-label" for="userEmail">Email Address</label>
+        <input type="email" id="userEmail" class="input-field" placeholder="jane.doe@example.com" autocomplete="email" onkeydown="if(event.key==='Enter')startQuiz()">
+      </div>
+
+      <div class="consent-row">
+        <input type="checkbox" id="userConsent">
+        <label for="userConsent">Send me occasional photography tips, tutorials and workshop news from Sproul Photography. You can unsubscribe at any time.</label>
+      </div>
+      <div id="formError" class="error-msg">Please enter your name and a valid email address to begin.</div>
+
+      <button class="btn" onclick="startQuiz()">Begin Assessment</button>
+      <p class="privacy-note">Your details are used to personalise your certificate and, only if ticked above, to send you photography content.</p>
+    </div>`;
+  reportHeight();
+}
+
+function startQuiz() {
+  const fNameInput = document.getElementById('userFirstName').value.trim();
+  const lNameInput = document.getElementById('userLastName').value.trim();
+  const emailInput = document.getElementById('userEmail').value.trim();
+  const consentInput = document.getElementById('userConsent').checked;
+  const errorMsg = document.getElementById('formError');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!fNameInput || !lNameInput || !emailRegex.test(emailInput)) {
+    errorMsg.style.display = 'block';
+    if (!fNameInput) document.getElementById('userFirstName').focus();
+    else if (!lNameInput) document.getElementById('userLastName').focus();
+    else document.getElementById('userEmail').focus();
+    return;
+  }
+
+  candidateFirstName = fNameInput;
+  candidateLastName = lNameInput;
+  candidateEmail = emailInput;
+  candidateConsent = consentInput;
+  errorMsg.style.display = 'none';
+
+  // --- VELO BRIDGE: send the captured lead to the parent Wix page ---
+  postToWix("QUIZ_LEAD_CAPTURE", {
+    firstName: candidateFirstName,
+    lastName: candidateLastName,
+    email: candidateEmail,
+    consent: candidateConsent,
+    startedAt: new Date().toISOString()
+  });
+
+  selected = shuffle(QB).slice(0, quizLength).map(q => {
+    const correct = q.o[q.c];
+    const shuffled = shuffle(q.o);
+    return { ...q, shuffledOptions: shuffled, correctAnswer: correct };
+  });
+
+  current = 0;
+  score = 0;
+  answers = [];
+  render();
+}
+
+function render() {
+  const app = document.getElementById('app');
+  if (current >= selected.length) { renderResults(app); return; }
+  const q = selected[current];
+  const letters = ['A','B','C','D'];
+
+  app.innerHTML = `
+    <div class="fade-in-up">
+      <div class="meta">
+        <span class="category">${q.cat}</span>
+        <span>Question ${current + 1} of ${selected.length} &nbsp;|&nbsp; Score: ${score}</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${(current/selected.length)*100}%"></div></div>
+      <div class="question">${q.q}</div>
+      <div class="options" id="opts">
+        ${q.shuffledOptions.map((o, i) => `
+          <div class="option" tabindex="0" data-i="${i}" onclick="pick(this,${i})" onkeydown="handleOptionKey(event, this, ${i})">
+            <span class="option-letter">${letters[i]}</span>
+            <span>${o}</span>
+          </div>`).join('')}
+      </div>
+      <div class="feedback" id="fb"></div>
+      <button class="btn" id="nxt" style="display:none" onclick="next()">
+        ${current + 1 < selected.length ? 'Next Question →' : 'View Your Results'}
+      </button>
+    </div>`;
+
+  setTimeout(() => { const o = document.querySelector('.option'); if (o) o.focus(); }, 50);
+  reportHeight();
+}
+
+function handleOptionKey(e, el, i) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    pick(el, i);
+  }
+}
+
+function pick(el, i) {
+  if (el.classList.contains('locked')) return;
+  const q = selected[current];
+  const opts = document.querySelectorAll('.option');
+  const isCorrect = q.shuffledOptions[i] === q.correctAnswer;
+
+  opts.forEach(o => o.classList.add('locked'));
+  opts.forEach((o, j) => {
+    if (q.shuffledOptions[j] === q.correctAnswer) o.classList.add('correct');
+  });
+  if (!isCorrect) el.classList.add('wrong');
+
+  const fb = document.getElementById('fb');
+  fb.className = `feedback ${isCorrect ? 'correct' : 'wrong'}`;
+  fb.style.display = 'block';
+  if (isCorrect) { score++; fb.innerHTML = '<strong>✓ Correct!</strong> Well done.'; }
+  else fb.innerHTML = `<strong>✗ Not quite.</strong> The correct answer is: <em>${q.correctAnswer}</em>`;
+
+  answers.push({ q: q.q, cat: q.cat, chosen: q.shuffledOptions[i], correct: q.correctAnswer, ok: isCorrect });
+
+  const nxt = document.getElementById('nxt');
+  nxt.style.display = 'flex';
+  nxt.focus();
+  reportHeight();
+}
+
+function next() { current++; render(); }
+
+
+function renderResults(app) {
+  const total = selected.length;
+  const pct = Math.round((score / total) * 100);
+  lastPct = pct;
+  const passed = pct >= PASS_MARK;
+  const [label, col] = gradeLabel(pct);
+  const wrong = answers.filter(a => !a.ok);
+  const right = answers.filter(a => a.ok);
+
+  // --- VELO BRIDGE: report the result so Wix can store it against the lead ---
+  postToWix("QUIZ_COMPLETED", {
+    firstName: candidateFirstName,
+    lastName: candidateLastName,
+    email: candidateEmail,
+    consent: candidateConsent,
+    score: score,
+    total: total,
+    percent: pct,
+    passed: passed,
+    completedAt: new Date().toISOString()
+  });
+
+  const catStats = {};
+  answers.forEach(a => {
+    if (!catStats[a.cat]) catStats[a.cat] = { total: 0, right: 0 };
+    catStats[a.cat].total++;
+    if (a.ok) catStats[a.cat].right++;
+  });
+
+  const catBreakdownHTML = Object.entries(catStats)
+    .sort((a,b) => (b[1].right/b[1].total) - (a[1].right/a[1].total))
+    .map(([cat, stats]) => {
+      const cPct = (stats.right / stats.total) * 100;
+      let barCol = 'var(--navy)';
+      if (cPct < 60) barCol = 'var(--red)';
+      else if (cPct < 80) barCol = 'var(--gold)';
+
+      return `
+        <div class="cb-item">
+          <div class="cb-header">
+            <strong>${cat}</strong>
+            <span>${stats.right} / ${stats.total} (${Math.round(cPct)}%)</span>
+          </div>
+          <div class="cb-bar-bg"><div class="cb-bar-fill" style="width:${cPct}%; background:${barCol}"></div></div>
+        </div>`;
+    }).join('');
+
+  app.innerHTML = `
+    <div class="results fade-in-up">
+      <div class="score-ring ${passed ? 'pass' : ''}" style="--pct:${pct}%">
+        <div class="score-inner">
+          <span class="score-num" style="color:${col}">${score}</span>
+          <span class="score-denom">/ ${total}</span>
+        </div>
+      </div>
+      <div class="grade" style="color:${col}">${label}</div>
+      <div class="grade-msg">${pct}% accuracy · ${right.length} correct · ${wrong.length} incorrect</div>
+
+      ${passed ? `
+      <div class="cert-banner">
+        <h3>🎉 Congratulations, ${candidateFirstName}!</h3>
+        <p>You have surpassed the ${PASS_MARK}% requirement and earned your certificate.</p>
+        <button class="btn btn-success" id="certBtn" onclick="downloadCertificate()">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          Download PDF Certificate
+        </button>
+      </div>
+      ` : `
+      <div class="fail-banner">
+        A score of ${PASS_MARK}% is required to unlock your certificate. Review your answers below, brush up, and have another go — a fresh set of 30 questions awaits.
+      </div>
+      `}
+
+      <div class="cat-breakdown">
+        <h3 style="font-size:0.82rem; color:var(--muted); margin-bottom:16px; text-transform:uppercase; letter-spacing:0.06em;">Performance by Module</h3>
+        ${catBreakdownHTML}
+      </div>
+
+      ${wrong.length ? `
+      <div style="margin-bottom:28px">
+        <h3 style="margin-bottom:16px;font-size:0.82rem;color:var(--muted);text-align:left;text-transform:uppercase; letter-spacing:0.06em;">Review Incorrect Responses</h3>
+        <div class="review-list">
+          ${wrong.map(a => `
+            <details class="review-item">
+              <summary><span class="ri-icon">🔍</span> ${a.q}</summary>
+              <div class="details-content">
+                <div class="ri-wrong">✗ You selected: ${a.chosen}</div>
+                <div class="ri-a">✓ Correct answer: ${a.correct}</div>
+              </div>
+            </details>
+          `).join('')}
+        </div>
+      </div>` : '<p style="color:var(--green);margin-bottom:28px;font-size:1.1rem;font-weight:600;">🎯 Perfect score — an impeccable understanding!</p>'}
+
+      <button class="btn" style="background:var(--card); color:var(--navy); border:2px solid var(--border);" onclick="showStart()">Start New Session</button>
+    </div>`;
+  reportHeight();
+}
+
+// --- BOOT ---
+async function boot() {
+  const app = document.getElementById('app');
+  app.innerHTML = '<div class="start fade-in-up"><div class="start-icon">\u23f3</div>' +
+    '<h2 style="margin-bottom:12px; font-size:1.5rem;">Loading the question bank\u2026</h2></div>';
+  reportHeight();
+  try {
+    const res = await fetch(QUESTION_BANK_URL, { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    QB = parseCSVToQuiz(await res.text());
+    if (!QB.length) throw new Error('No usable rows in questions.csv');
+    if (QB.length < quizLength) quizLength = QB.length;
+    showStart();
+  } catch (err) {
+    app.innerHTML = '<div class="start fade-in-up"><div class="start-icon">\u26a0\ufe0f</div>' +
+      '<h2 style="margin-bottom:12px; font-size:1.5rem;">The question bank could not be loaded</h2>' +
+      '<p>Please refresh the page. If this keeps happening, do let me know at ' +
+      '<a href="mailto:martin@sproul.photography" style="color:var(--navy);">martin@sproul.photography</a>.</p></div>';
+    reportHeight();
+    console.error('[Quiz] Failed to load ' + QUESTION_BANK_URL + ':', err);
+    console.error('[Quiz] If you are opening this file directly from disk, the browser blocks fetch(). Run a local web server instead.');
+  }
+}
+
+boot();
+</script>
+</body>
+</html>
